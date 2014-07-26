@@ -15,6 +15,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
@@ -24,7 +25,10 @@ import java.util.Map;
 @Configuration
 @EnableAutoConfiguration
 public class Application implements CommandLineRunner {
-    final static String queueName = "spring-boot";
+    final static String queueName = "My Queue";
+
+    @Autowired
+    Environment environment;
 
     @Autowired
     RabbitTemplate rabbitTemplate;
@@ -49,7 +53,8 @@ public class Application implements CommandLineRunner {
 
     @Bean
     ConnectionFactory connectionFactory() {
-        return new CachingConnectionFactory("54.76.183.35");
+        String host = environment.getProperty("rabbitmq.host");
+        return new CachingConnectionFactory(host);
     }
 
     @Bean
