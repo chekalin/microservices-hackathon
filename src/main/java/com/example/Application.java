@@ -49,7 +49,7 @@ public class Application implements CommandLineRunner {
 
     @Bean
     ConnectionFactory connectionFactory() {
-        return new CachingConnectionFactory("localhost");
+        return new CachingConnectionFactory("54.76.183.35");
     }
 
     @Bean
@@ -78,7 +78,7 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Waiting five seconds...");
-        List<Map<String, Object>> result = jdbcTemplate.queryForList("SELECT * FROM test");
+        List<Map<String, Object>> result = jdbcTemplate.queryForList("SELECT * FROM facts");
         System.out.println("result = " + result);
         Thread.sleep(5000);
         System.out.println("Sending message...");
