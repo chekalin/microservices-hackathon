@@ -24,7 +24,7 @@ final class RoomRepository {
 
     public Collection<String> getRooms() {
         return jdbcTemplate.queryForList(
-                "SELECT content ->'room_name' as room_name FROM facts WHERE topic = 'room_created'",
+                "SELECT content ->>'room_name' as room_name FROM facts WHERE topic = 'room_created'",
                 String.class);
     }
 }
