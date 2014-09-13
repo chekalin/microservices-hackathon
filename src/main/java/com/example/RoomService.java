@@ -2,7 +2,7 @@ package com.example;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.Scanner;
 
 public class RoomService {
 
@@ -10,6 +10,7 @@ public class RoomService {
     private static final Publisher publisher = new Publisher();
 
     public static void main(String[] a) throws IOException, SQLException {
+
         while (true) {
             System.out.println("1> Create Room");
             System.out.println("2> Create Door");

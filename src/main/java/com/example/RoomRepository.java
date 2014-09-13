@@ -13,7 +13,7 @@ final class RoomRepository {
     public RoomRepository() {
         SimpleDataSource dataSource = new SimpleDataSource();
         try {
-            dataSource.setUrl("jdbc:postgresql://microservices.cc9uedlzx2lk.eu-west-1.rds.amazonaws.com:5432/micro");
+            dataSource.setUrl("jdbc:postgresql://microservices-chris-10sep2014.cc9uedlzx2lk.eu-west-1.rds.amazonaws.com/micro");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

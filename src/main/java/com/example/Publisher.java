@@ -12,7 +12,7 @@ public class Publisher {
 
     public Publisher() {
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("54.76.183.35");
+        factory.setHost("54.76.117.95");
         Connection connection;
         try {
             connection = factory.newConnection();
@@ -24,7 +24,7 @@ public class Publisher {
 
     public void publish(String message, String topicName) {
         try {
-            channel.basicPublish("alex2", topicName, null, message.getBytes());
+            channel.basicPublish("combo", topicName, null, message.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
